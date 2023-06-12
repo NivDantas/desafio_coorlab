@@ -8,4 +8,11 @@ Com a utilização do framework Vue.JS, o projeto destaca alta escalabilidade, s
 - `JavaScript`
 - `HTML e CSS`
 
+# 🛠️ Abrir e rodar o projeto
+**• Na pasta code, executar o comando `npm install`.**
+
+**• Após isso, executar o comando `npm run api_serve` para levantar a API.**
+
+**• Por fim, executar o comando `npm run serve` para levantar o projeto.**
+
 ![Desafio Coorlab GIF](https://i.imgur.com/Wfb60Mc.gif)
