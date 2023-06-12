@@ -17,6 +17,7 @@
             e o peso
           </h2>
           <label for="city"><b>Cidade de destino:</b></label>
+          <!-- Seleção da cidade com o uso de v-model e v-for. -->
           <select id="city" class="form-control" v-model="cidadeSelecionada">
             <option class="first-option" disabled selected value="">
               Selecione o destino
@@ -25,6 +26,7 @@
           </select>
         </div>
         <div class="form-group">
+          <!-- Uso de v-model para peso. -->
           <label for="peso"><b>Peso do frete:</b></label>
           <input
             type="number"
@@ -91,6 +93,7 @@
           </div>
         </transition>
         <transition>
+          <!-- Botão para limpar os resultados. -->
           <button
             @click="limparFretes"
             class="limpar"
@@ -100,6 +103,7 @@
           </button>
         </transition>
         <transition>
+          <!--  Aviso para caso dados não tenham sido inseridos pelo usuário. -->
           <div v-if="exibirAviso" class="aviso">
             <img src="../assets/warning.svg" />
             <h3>Insira os valores para realizar a análise.</h3>
@@ -158,7 +162,7 @@ export default {
           );
           this.apiData[i].lead_time = parseInt(this.apiData[i].lead_time);
         }
-
+        // Pegando cidades únicas para valor do formulário.
         this.cidades = Object.keys(cidadesUnicas);
       })
       .catch((error) => {
@@ -166,6 +170,7 @@ export default {
       });
   },
   watch: {
+    // Ver as mudanças do peso em tempo real.
     pesoTempoReal(newValue) {
       this.pesoTempoReal = parseFloat(newValue);
     },
@@ -228,9 +233,11 @@ export default {
         return custoTotal.toFixed(2);
       }
     },
+    // Método para fechar o aviso.
     fecharAviso() {
       this.exibirAviso = false;
     },
+    // Método para limpar os resultados, junto com os valores inseridos pelo usuário no formulário.
     limparFretes() {
       this.freteRapido = null;
       this.freteBarato = null;
@@ -242,6 +249,7 @@ export default {
 </script>
 
 <style scoped>
+/* Estilos aplicados no componente, em ordem de inserção no HTML. */
 html {
   background-color: #f2f2f2;
 }
