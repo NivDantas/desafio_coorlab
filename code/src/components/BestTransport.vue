@@ -77,7 +77,7 @@
             <p>Transportadora: {{ freteRapido.name }}</p>
             <p>Tempo de entrega: {{ freteRapido.lead_time }} horas</p>
             <p>
-              Custo total: <b>R${{ formatarCustoTotalEconomica() }}</b>
+              Custo total: <b>R${{ formatarCustoTotalRapida() }}</b>
             </p>
           </div>
         </transition>
