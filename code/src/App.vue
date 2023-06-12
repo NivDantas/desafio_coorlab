@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <BestTransport/>
+    <BestTransport />
   </div>
 </template>
 
 <script>
-import BestTransport from './components/BestTransport.vue'
+import BestTransport from "./components/BestTransport.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    BestTransport
-  }
-}
+    BestTransport,
+  },
+};
 </script>
 
 <style>
+#app {
+  font-family: "Roboto", sans-serif;
+}
 </style>
