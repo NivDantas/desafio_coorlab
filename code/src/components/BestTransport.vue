@@ -97,7 +97,7 @@
           <button
             @click="limparFretes"
             class="limpar"
-            v-if="freteRapido && freteBarato"
+            v-if="freteRapido && freteBarato && peso"
           >
             Limpar
           </button>
@@ -186,6 +186,10 @@ export default {
       console.log(freteFiltrado);
       // Definição do peso baseado no input.
       this.peso = this.pesoTempoReal;
+      if (!this.cidadeSelecionada || !this.peso) {
+        this.exibirAviso = true;
+        return -1;
+      }
       // Função sort para menor preço, dividindo em pesos.
       if (this.peso <= 100) {
         freteFiltrado.sort(
@@ -201,11 +205,6 @@ export default {
       // Função sort para menor tempo.
       freteFiltrado.sort((a, b) => a.lead_time - b.lead_time);
       this.freteRapido = freteFiltrado[0];
-
-      if (!this.cidadeSelecionada || !this.peso) {
-        this.exibirAviso = true;
-      }
-      console.log(this.freteRapido);
     },
     // Método para formatar o custo total economico.
     formatarCustoTotalEconomica() {
